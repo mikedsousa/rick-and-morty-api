@@ -4,11 +4,12 @@ const result = document.querySelector(".result");
 const btn = document.querySelector(".btn");
 const input = document.getElementById("search");
 
-const choosenId = Math.round(Math.random() * 825) + 1;
 const characters = await fetchData();
 const choosenOne = await fetchData(287);
 
 // Filter the characters by name when user types in the input
+
+let choosenId;
 
 input.addEventListener("keyup", (event) => {
   result.innerHTML = "";
@@ -22,16 +23,21 @@ input.addEventListener("keyup", (event) => {
     const div = document.createElement("div");
     div.className = "item";
 
-    const p = document.createElement("p");
-    p.textContent = filteredCharacters[i].name;
-    p.className = "name";
+    const pName = document.createElement("p");
+    pName.textContent = filteredCharacters[i].name;
+    pName.className = "name";
+
+    const pId = document.createElement("p");
+    pId.textContent = filteredCharacters[i].id;
+    pId.className = "id";
 
     const img = document.createElement("img");
     img.className = "profile";
     img.src = filteredCharacters[i].image;
 
     div.appendChild(img);
-    div.appendChild(p);
+    div.appendChild(pId);
+    div.appendChild(pName);
     result.appendChild(div);
 
     if (value === "") {
@@ -42,19 +48,19 @@ input.addEventListener("keyup", (event) => {
 
   for (let i = 0; i < item.length; i++) {
     item[i].addEventListener("click", () => {
+      choosenId = item[i].querySelector(".id").textContent;
       const value = item[i].querySelector(".name").textContent;
-
       input.value = value;
       result.innerHTML = "";
     });
   }
+
 });
 
 btn.addEventListener("click", () => {
-  const name = input.value.toLowerCase();
-
+  // const name = input.value.toLowerCase();
   const choosedCharacter = characters.find((character) => {
-    return character.name.toLowerCase() === name;
+    return character.id === Number(choosenId);
   });
 
   const grid = document.querySelector(".grid");
