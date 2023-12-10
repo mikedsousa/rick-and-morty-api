@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rick and Morty API</title>
+  <link rel="shortcut icon" href="app/images/icon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="app/style/reset.css">
+  <link rel="stylesheet" href="app/style/main.css">
+  <link rel="stylesheet" href="dist/stars.css">
+
+</head>
+
+<body>
+  <div id="stars-group-1"></div>
+  <div id="stars-group-2"></div>
+  <div id="stars-group-3"></div>
+  <div id="stars-group-4"></div>
+  <div id="stars-group-5"></div>
+  <div id="stars-group-6"></div>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Updates</a></li>
+        <li><a href="https://www.buymeacoffee.com/mikedesousa" rel="external" target="_blank"><img class="bmac-btn"
+              src="app/images/bmc-button.webp" alt="buymeacoffee button"></a></li>
+      </ul>
+
+    </nav>
+    <hr>
+    <h1>Who is today's character?</h1>
+  </header>
+
+  <main>
+    <div id="input">
+      <input type="text" id="search" class="autocomplete" autocomplete="off">
+      <div class="result"></div>
+    </div>
+    <input class="btn" type="submit" value="GO!">
+  </main>
+
+  <div class="grid"></div>
+
+</body>
+<script src="https://kit.fontawesome.com/e735c4091b.js" crossorigin="anonymous"></script>
+<script src="./app/js/main.js" type="module"></script>
+
+</html>
