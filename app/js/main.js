@@ -5,7 +5,7 @@ const btn = document.querySelector(".btn");
 const input = document.getElementById("search");
 
 const characters = await fetchData();
-const choosenOne = await fetchData(287);
+const choosenOne = await fetchData(118);
 
 // Filter the characters by name when user types in the input
 
@@ -19,7 +19,7 @@ input.addEventListener("keyup", (event) => {
     return character.name.toLowerCase().includes(value);
   });
 
-  for (let i = 0; i < Math.min(5, filteredCharacters.length); i++) {
+  for (let i = 0; i < filteredCharacters.length; i++) {
     const div = document.createElement("div");
     div.className = "item";
 
@@ -54,6 +54,7 @@ input.addEventListener("keyup", (event) => {
       result.innerHTML = "";
     });
   }
+
 
 });
 

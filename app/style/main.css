@@ -86,6 +86,8 @@ main #input {
 .result {
   width: 70%;
   height: auto;
+  max-height: 250px;
+  overflow-y: auto;
   background-color: #fff;
   position: absolute;
   top: 2.5rem;
